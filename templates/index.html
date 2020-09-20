@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block content %}
+<div style="width: 100%; overflow: hidden;">
+<div  style="width: 500px; float: left;">
+  <h3><i>"Summarize your video and Save time..!!"</i></h3><br><br>
+  <div class='conte'>
+  <p>
+  Youtube Video Summarization is implemented from <a target="_blank" rel="noopener noreferrer" href="https://pypi.org/project/youtube-transcript-api/"><b>youtube_transcript_api</b></a> and NLP <a target="_blank" rel="noopener noreferrer" href="https://huggingface.co/transformers/"><b>HuggingFace's</b></a> Bart Seq-seq Transformation Models for summarization.
+  It can summarize the contents of any youtube video in words or to speech. This application has been implemented for people
+  who want to know about video before watching the full content. The app is developed in Python, Flask,
+  Javascript, HTML, CSS.
+  </p>
+  </div>
+  <b>Note:</b>
+  <ul>
+    <li>As of now, this app works on youtube video which has subtitles.
+      </li>
+      <li>Video more than 15 minutes is not supported.
+        </li>
+    </ul>
+</div>
+<div style="margin-left: 600px;">
+  <form id="youtube-video" method="post" enctype="multipart/form-data">
+      <label for="imageUpload">
+          <b>Please Enter Youtube Url:</b>
+      </label>
+      <input type="text" name="video" id="imageUpload" class="form-control">
+  </form>
+  <div id="errormessage"><span>Enter a youtube url.</span></div>
+  <div class="image-section">
+      <div>
+          <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Summary!</button>
+      </div>
+  </div>
+  <div class="image-section" >
+      <div>
+          <button style="display:none;" type="button" class="btn btn-primary btn-lg " id="btn-speech">Summary to Speech!!</button>
+          <button style="display:none;" type="button" class="btn btn-primary btn-lg " id="btn-pause">Pause!!</button>
+      </div>
+  </div>
+  <div class="loader" style="display:none;"></div>
+
+  <p id="result">
+      <span> </span>
+  </p>
+  </div>
+  </div>
+{% endblock %}
