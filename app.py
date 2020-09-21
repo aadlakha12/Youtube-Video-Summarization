@@ -21,6 +21,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 # Define a flask app
 app = Flask(__name__)
 
+# model prediction
 def model_predict(data):
 
     torch_device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -49,6 +50,7 @@ def model_predict(data):
 def index():
     return render_template('index.html')
 
+# API
 @app.route('/youtube', methods=['GET','POST'])
 def get_video():
 
@@ -56,7 +58,8 @@ def get_video():
     # video = request.args.get('videoid')
     # print(video)
     if request.method == 'POST':
-
+        
+        # extracting videoid from youtube url
         video_link = request.form.get('video').split('=');
         video_id = video_link[1]
         print(video_id)
@@ -73,20 +76,26 @@ def get_video():
             # print(data)
 
             datavv = data.replace('\n', '')
-
+            
+            # content summary
             model_result = model_predict(datavv)
 
             video_result = {
                 'text': data,
                 'summary': model_result
             }
-
-            return jsonify({'video_summary': video_result,
+            
+            summ_result = jsonify({'video_summary': video_result,
             'status':'Ok'})
+            
+            return summ_result
 
         except:
-            return jsonify({'error': 'Not found !! It might be due to wrong Youtube Video Url or Captions for this video are disabled',
+            # error message for wrong youtube url 
+            error = jsonify({'error': 'Not found !! It might be due to wrong Youtube Video Url or Captions for this video are disabled',
             'status': 'error'})
+            
+            return error
 
         return None
 
