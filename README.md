@@ -30,7 +30,7 @@ Steps to run this code:
 ![alt text](https://github.com/aadlakha12/Youtube-Video-Summarization/blob/master/Results/blankError.png?raw=true)
 
 
-##### Wrong Url Error:
+##### Wrong Url or Captions Disabled Error:
 
 ![alt text](https://github.com/aadlakha12/Youtube-Video-Summarization/blob/master/Results/wrongurlError.png?raw=true)
 
