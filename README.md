@@ -12,3 +12,29 @@ Steps to run this code:
 1. Download code.
 2. Install necessary dependencies.
 3. Run Python app.py from the project folder in the terminal.
+
+### Application:
+
+##### Main Page:
+
+![alt text](https://github.com/aadlakha12/Youtube-Video-Summarization/blob/master/Results/MainPage.png?raw=true)
+
+
+##### Summary Result:
+
+![alt text](https://github.com/aadlakha12/Youtube-Video-Summarization/blob/master/Results/Result.png?raw=true)
+
+
+##### Blank Url Error:
+
+![alt text](https://github.com/aadlakha12/Youtube-Video-Summarization/blob/master/Results/blankError.png?raw=true)
+
+
+##### Wrong Url Error:
+
+![alt text](https://github.com/aadlakha12/Youtube-Video-Summarization/blob/master/Results/wrongurlError.png?raw=true)
+
+
+##### More than 15 minutes video Error:
+
+![alt text](https://github.com/aadlakha12/Youtube-Video-Summarization/blob/master/Results/15minuteserror.png?raw=true)
